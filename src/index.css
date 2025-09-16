@@ -5,49 +5,46 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  font-size: 16px;
   font-family: system-ui, Arial, sans-serif;
-}
+  overflow-x: hidden; overflow-x: hidden;
+}}
 
-/* Optional: set the global background so full width is covered */
 body {
-  background: linear-gradient(135deg,#e3f4ef,#b7dfe0,#c6eadc);
+  background: linear-gradient(135deg,#e5f1ec,#bedfe2,#c6eadc);
   background-attachment: fixed;
 }
 
 :root {
+  --layout-max: 1380px;
+  --side-pad: clamp(1rem, 3vw, 3rem);
   --nav-height: 90px;         /* keep one source of truth */
 
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Fluid type scale */
+  --fs-xs: clamp(.72rem, .55vw, .78rem);2rem, .55vw, .78rem);
+  --fs-sm: clamp(.82rem, .7vw, .9rem);2rem, .7vw, .9rem);
+  --fs-base: clamp(.95rem, .85vw, 1.05rem);  --fs-base: clamp(.95rem, .85vw, 1.05rem);
+  --fs-lg: clamp(1.15rem, 1.2vw, 1.35rem);.2vw, 1.35rem);
+  --fs-xl: clamp(1.6rem, 2vw, 2rem);;
+  --fs-hero: clamp(2.6rem, 6vw, 5rem);vw, 5rem);
+}}
 
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
+  text-decoration: inherit; text-decoration: inherit;
+}}
+a:hover {over {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
+body {ody {
+  margin: 0; 0;
   padding: 0%;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  display: flex; display: flex;
+  place-items: center;  place-items: center;
+  min-width: 320px;width: 320px;
+  min-height: 100vh;: 100vh;
 }
 
 h1 {
@@ -55,41 +52,56 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
+button {on {
+  border-radius: 8px;x;
+  border: 1px solid transparent; transparent;
+  padding: 0.6em 1.2em; padding: 0.6em 1.2em;
+  font-size: 1em;  font-size: 1em;
+  font-weight: 500;eight: 500;
+  font-family: inherit;t;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s;der-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
 }
 button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button:focus-visible {utton:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color; auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {rs-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
-  }
+    background-color: #ffffff;   background-color: #ffffff;
+  }  }
   a:hover {
-    color: #747bff;
+    color: #747bff;: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; background-color: #f9f9f9;
   }
 }
 
-.container {
+.container { {
   width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 2.5rem);
+  max-width: var(--layout-max);ax-width: var(--layout-max);
+  margin-inline: auto; margin-inline: auto;
+  padding-inline: var(--side-pad);  padding-inline: var(--side-pad);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+img {img {
+
+
+
+
+
+}  display: block;  height: auto;  max-width: 100%;  max-width: 100%;
+  height: auto;
+  display: block;
 }
