@@ -1,0 +1,115 @@
+/* Footer full width */
+.footer {
+  background-color: #2D6A4F; /* dark background */
+  color: #f5f5f5;
+  padding: 20px 10px 5px;
+  font-family: Arial, sans-serif;
+
+  width: 1200%;
+  max-width: 1265px;      
+  margin: 0 auto;         
+  box-sizing: border-box;
+}
+
+/* Top content: 3 columns */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  width: 100%;
+  padding-left: 40px;   /* add horizontal padding */
+  padding-right: 40px;
+}
+
+/* Branding (left) */
+.footer-branding {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+  max-width: 400px;     /* prevent left column from being too wide */
+}
+
+.footer-name {
+  color: #fbfdfd; 
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.footer-role {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-top: 8px;
+  max-width: 400px;
+}
+
+/* Links (center) */
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+  max-width: 400px;     /* prevent left column from being too wide */
+}
+
+.footer-links h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #f5f5f5;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #44efe9;
+}
+
+/* Socials (right) */
+.footer-socials {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+  max-width: 400px;     /* prevent left column from being too wide */
+}
+
+.footer-socials h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: #f5f5f5;
+}
+
+.social-icons a:hover {
+  color: #44efe9;
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  border-top: 1px solid #ffffff;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ffffff;
+  width: 100%;   /* ✅ span full width */
+}
