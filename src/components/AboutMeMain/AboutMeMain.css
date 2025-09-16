@@ -61,3 +61,42 @@
 .icon {
   font-size: 2rem;
 }
+
+.features {
+  padding: 2rem 0 3.5rem;
+}
+
+.features-inner {
+  width: 100%;
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.feature-grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 1.8rem;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: clamp(1.4rem, 2.2vw, 2rem);
+  text-align: center;
+  box-shadow: 0 12px 32px -18px rgba(0,0,0,.18), 0 6px 16px -8px rgba(0,0,0,.14);
+  transition: transform .35s, box-shadow .35s;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px -16px rgba(0,0,0,.24), 0 10px 24px -10px rgba(0,0,0,.18);
+}
+.feature-card h3 {
+  font-size: var(--fs-lg);
+  margin: 1rem 0 .75rem;
+}
+.feature-card p {
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}

@@ -28,16 +28,16 @@ const TypingHeroText = () => {
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="hero-text">
-        <TypingHeroText />
-        <h2>
-          Frontend Developer <span className="highlight">| Design & Video Enthusiast</span>
-        </h2>
-        <p>Designing and developing with creativity at the core.</p>
-        <a href="#work" className="view-work-link">View My Work→</a>
-      </div>
-      <div className="hero-img">
-        <img src={profilePic} alt="KC Prudon" />
+      <div className="hero-inner">
+        <div className="hero-text">
+          <TypingHeroText />
+          <h2>Frontend Developer <span className="highlight">| Design & Video Enthusiast</span></h2>
+          <p>Designing and developing with creativity at the core.</p>
+          <a href="#work" className="view-work-link">View My Work→</a>
+        </div>
+        <div className="hero-img">
+          <img src={profilePic} alt="KC Prudon" />
+        </div>
       </div>
     </section>
   );
