@@ -33,7 +33,7 @@
 
 .about-card {
   flex: 1 1 280px;           
-  max-width: 300px;          /* stop cards from being too wide */
+  max-width: 300px;          
   background: #fff;
   padding: 25px;
   border-radius: 10px;
