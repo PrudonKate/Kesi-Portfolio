@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   gap: clamp(1.5rem, 4vw, 4rem);
-  padding: calc(var(--nav-height) + 2rem) clamp(1rem,3vw,2.2rem) 4rem;
+  padding: calc(var(--nav-height) + 3rem) clamp(1rem,3vw,2.2rem) 4rem;
   width: 100%;
   max-width: 1200px;        /* keep group centered */
   margin: 0 auto;

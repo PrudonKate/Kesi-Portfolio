@@ -88,15 +88,24 @@
 .social-icons {
   display: flex;
   gap: 15px;
-  font-size: 1.5rem;
+  align-items: center;
 }
 
 .social-icons a {
   color: #f5f5f5;
+  display: inline-flex;
+  align-items: center;
 }
 
 .social-icons a:hover {
   color: #44efe9;
+}
+
+.social-icons a svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: currentColor;
 }
 
 /* Bottom copyright */

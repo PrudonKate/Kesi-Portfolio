@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Python logo">
+  <!-- Simplified Python logo using official brand colors -->
+  <rect x="12" y="10" width="76" height="52" rx="20" fill="#3776AB" />
+  <rect x="40" y="66" width="76" height="52" rx="20" fill="#FFD43B" />
+  <circle cx="42" cy="30" r="6" fill="#ffffff" />
+  <circle cx="94" cy="84" r="6" fill="#ffffff" />
+</svg>

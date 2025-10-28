@@ -33,7 +33,15 @@ const Hero = () => {
           <TypingHeroText />
           <h2>Frontend Developer <span className="highlight">| Design & Video Enthusiast</span></h2>
           <p>Designing and developing with creativity at the core.</p>
-          <a href="#work" className="view-work-link">View My Work→</a>
+          {/* Download CV: place your PDF at public/resume.pdf */}
+          <a
+            href="/KATE PRUDON RESUME.pdf"
+            className="view-work-link"
+            download
+            aria-label="Download my resume as PDF"
+          >
+            Download CV →
+          </a>
         </div>
         <div className="hero-img">
           <img src={profilePic} alt="KC Prudon" />
