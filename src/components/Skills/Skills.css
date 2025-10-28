@@ -1,0 +1,121 @@
+.skills-section {
+  padding: calc(var(--nav-height) + 2rem) var(--side-pad) 4rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: #1a3b2c;
+  margin-bottom: 1rem;
+}
+
+.skills-description {
+  color: #1a3b2c;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  max-width: 70ch;
+  margin: 0 auto 2.2rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  justify-items: center;
+  align-items: start;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease;
+}
+.tech-logo {
+  width: 64px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+  transition: filter .2s ease, transform .2s ease;
+}
+.tech-label {
+  margin-top: .75rem;
+  color: #333;
+  font-size: var(--fs-sm);
+}
+
+.tech-item:hover .tech-icon { transform: scale(1.04); }
+.tech-item:hover .tech-logo { filter: drop-shadow(0 14px 24px rgba(0,0,0,.22)); }
+.tech-item:hover .tech-label {
+  color: #2D6A4F;
+}
+
+/* Removed tile backgrounds for minimalist logo-only style */
+
+.skills-image {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.skills-image img {
+  width: clamp(220px, 40vw, 420px);
+  filter: drop-shadow(0 14px 36px rgba(0,0,0,.18));
+}
+
+/* What I Can Do section */
+.capabilities {
+  margin-top: 3rem;
+  text-align: center;
+}
+.cap-title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: #1a3b2c;
+}
+.cap-desc {
+  color: #1a3b2c;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  max-width: 70ch;
+  margin: .75rem auto 1.8rem;
+}
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  gap: clamp(1rem, 3vw, 1.6rem);
+  justify-content: center; /* center tracks when fewer columns */
+}
+.cap-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: clamp(1.2rem, 2.5vw, 1.6rem);
+  box-shadow: 0 12px 32px -18px rgba(0,0,0,.18), 0 6px 16px -8px rgba(0,0,0,.14);
+  transition: transform .25s, box-shadow .25s;
+}
+.cap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px -16px rgba(0,0,0,.24), 0 10px 24px -10px rgba(0,0,0,.18);
+}
+.cap-card h3 {
+  margin: .6rem 0 .4rem;
+  color: #1a3b2c;
+  font-size: var(--fs-lg);
+}
+.cap-card p {
+  color: #333;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+.cap-icon {
+  font-size: 1.8rem;
+}
