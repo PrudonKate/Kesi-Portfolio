@@ -23,10 +23,13 @@
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.4rem;
-  color: #1B4332;
-  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+}
+.logo-img {
+  height: 45px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {

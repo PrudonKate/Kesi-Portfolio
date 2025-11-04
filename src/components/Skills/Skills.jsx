@@ -1,7 +1,78 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Skills.css";
 
 const Skills = () => {
+  const scrollRef = useRef(null);
+  const [dragging, setDragging] = useState(false);
+  const startXRef = useRef(0);
+  const startScrollLeftRef = useRef(0);
+  const pausedRef = useRef(false);
+  const rafRef = useRef(0);
+
+  // Auto-scroll loop for infinite movement
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const speed = -1.1; // pixels per frame (clear motion)
+    const step = () => {
+      if (!pausedRef.current && !dragging) {
+        el.scrollLeft += speed;
+        const max = el.scrollWidth / 2; // width of one track (duplicated once)
+        if (el.scrollLeft >= max) {
+          el.scrollLeft -= max; // wrap forward seamlessly
+        } else if (el.scrollLeft <= 0) {
+          el.scrollLeft += max; // wrap backward seamlessly
+        }
+      }
+      rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [dragging]);
+
+  const onMouseEnter = () => { pausedRef.current = true; };
+  const onMouseLeave = () => { pausedRef.current = false; };
+
+  const onPointerDown = (e) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setDragging(true);
+    startXRef.current = e.clientX;
+    startScrollLeftRef.current = el.scrollLeft;
+    el.setPointerCapture?.(e.pointerId);
+  };
+  const onPointerMove = (e) => {
+    if (!dragging) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    const delta = e.clientX - startXRef.current;
+    el.scrollLeft = startScrollLeftRef.current - delta;
+    const max = el.scrollWidth / 2;
+    if (el.scrollLeft >= max) {
+      el.scrollLeft -= max;
+    } else if (el.scrollLeft <= 0) {
+      el.scrollLeft += max;
+    }
+  };
+  const endDrag = (e) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setDragging(false);
+    el.releasePointerCapture?.(e.pointerId);
+  };
+
+  const logos = [
+    { src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg", label: "HTML" },
+    { src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg", label: "CSS" },
+    { src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg", label: "JavaScript" },
+    { src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg", label: "React" },
+    { src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg", label: "Tailwind CSS" },
+    { src: "https://raw.githubusercontent.com/vitejs/vite/main/docs/public/logo.svg", label: "Vite" },
+    { src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg", label: "Git" },
+    { src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg", label: "Python" },
+  ];
+
   return (
       <section className="skills-section" id="skills">
         <h1 className="skills-title">My Tech Stack</h1>
@@ -11,87 +82,28 @@ const Skills = () => {
           builds and Git for version control, I deliver everything from static sites to single-page
           applications focused on performance, accessibility, and great user experience.
         </p>
-
-        <div className="tech-grid">
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
-                alt="HTML"
-              />
-            </div>
-            <span className="tech-label">HTML</span>
-          </div>
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
-                alt="CSS"
-              />
-            </div>
-            <span className="tech-label">CSS</span>
-          </div>
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                alt="JavaScript"
-              />
-            </div>
-            <span className="tech-label">JavaScript</span>
-          </div>
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-                alt="React"
-              />
-            </div>
-            <span className="tech-label">React</span>
-          </div>
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
-                alt="Tailwind CSS"
-              />
-            </div>
-            <span className="tech-label">Tailwind CSS</span>
-          </div>
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/vitejs/vite/main/docs/public/logo.svg"
-                alt="Vite"
-              />
-            </div>
-            <span className="tech-label">Vite</span>
-          </div>
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-                alt="Git"
-              />
-            </div>
-            <span className="tech-label">Git</span>
-          </div>
-          <div className="tech-item">
-            <div className="tech-icon">
-              <img
-                className="tech-logo"
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-                alt="Python"
-              />
-            </div>
-            <span className="tech-label">Python</span>
+        {/* Auto-scrolling, hover-paused, draggable logos row */}
+        <div
+          className={`tech-scroll ${dragging ? "dragging" : ""}`}
+          ref={scrollRef}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+          tabIndex={0}
+          aria-label="Scrollable list of technology logos"
+        >
+          <div className="tech-track">
+            {[...logos, ...logos].map((logo, i) => (
+              <div className="tech-item" key={`${logo.label}-${i}`}>
+                <div className="tech-icon">
+                  <img className="tech-logo" src={logo.src} alt={logo.label} />
+                </div>
+                <span className="tech-label">{logo.label}</span>
+              </div>
+            ))}
           </div>
         </div>
         
