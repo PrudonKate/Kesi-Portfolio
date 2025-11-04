@@ -21,6 +21,26 @@
   margin: 0 auto 2.2rem;
 }
 
+.tech-scroll {
+  position: relative;
+  overflow: hidden; /* hide scrollbar but allow programmatic scroll */
+  width: 100%;
+  margin: 1.2rem auto 2rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.tech-scroll.dragging { cursor: grabbing; }
+.tech-scroll:not(.dragging) { cursor: grab; }
+.tech-track {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: 0 .5rem;
+  /* optional edge fade for nicer look (WebKit only) */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));

@@ -8,7 +8,7 @@ html, body {
   font-size: 16px;
   font-family: system-ui, Arial, sans-serif;
   overflow-x: hidden; overflow-x: hidden;
-}}
+}
 
 body {
   background: linear-gradient(135deg,#e5f1ec,#bedfe2,#c6eadc);
@@ -27,13 +27,13 @@ body {
   --fs-lg: clamp(1.15rem, 1.2vw, 1.35rem);.2vw, 1.35rem);
   --fs-xl: clamp(1.6rem, 2vw, 2rem);;
   --fs-hero: clamp(2.6rem, 6vw, 5rem);vw, 5rem);
-}}
+}
 
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit; text-decoration: inherit;
-}}
+}
 a:hover {over {
   color: #535bf2;
 }
