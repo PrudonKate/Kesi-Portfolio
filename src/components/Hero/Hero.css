@@ -3,12 +3,11 @@
   align-items: center;
   justify-content: space-between;
   gap: clamp(1.5rem, 4vw, 4rem);
-  padding: calc(var(--nav-height) + 3rem) clamp(1rem,3vw,2.2rem) 4rem;
+  padding: calc(var(--nav-height) - 0.5rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 8vh, 5rem);
   width: 100%;
-  max-width: 1200px;        /* keep group centered */
+  max-width: 1200px;
   margin: 0 auto;
   color: #123c2d;
-  padding-bottom: clamp(2.5rem, 6vh, 4rem);
   box-sizing: border-box;
 }
 
@@ -31,9 +30,10 @@
 }
 
 .hero-title {
-  font-size: var(--fs-hero);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 1.05;
   font-weight: 700;
+  color: #1a3b2c;
   margin: 0 0 1.1rem;
 }
 
@@ -64,7 +64,8 @@
   transition: background .3s, transform .3s, box-shadow .3s;
 }
 .view-work-link:hover {
-  background: #0f714f;
+  background: #B7E4C7;
+  color: #0a5a3f;
   transform: translateY(-2px);
   box-shadow: 0 12px 30px -10px rgba(0,0,0,.35);
 }

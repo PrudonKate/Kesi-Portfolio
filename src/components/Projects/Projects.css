@@ -1,15 +1,50 @@
 .projects-section {
-  padding: clamp(100px, 15vh, 120px) clamp(1rem, 5vw, 40px) clamp(60px, 10vh, 80px);
+  padding: calc(var(--nav-height) - 0.5rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 8vh, 5rem);
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .projects-title {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 800;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #1a3b2c;
   margin-bottom: clamp(16px, 3vh, 24px);
   text-align: center;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1.5vw, 12px);
+  margin-bottom: clamp(24px, 4vh, 32px);
+}
+
+.category-btn {
+  background: #fff;
+  color: #0a5a3f;
+  border: 2px solid #0a5a3f;
+  padding: clamp(8px, 1.5vw, 10px) clamp(16px, 2.5vw, 20px);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.category-btn:hover {
+  background: #B7E4C7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.category-btn.active {
+  background: linear-gradient(135deg, #0a5a3f 0%, #137b58 100%);
+  color: #fff;
+  border-color: #0a5a3f;
+  box-shadow: 0 4px 12px rgba(10, 90, 63, 0.3);
 }
 
 .projects-grid {
@@ -80,13 +115,15 @@
   padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2vw, 14px);
   font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(255, 125, 145, .3);
-  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 6px 12px rgba(10, 90, 63, 0.3);
+  transition: all 0.3s ease;
 }
 
 .view-project-btn:hover {
+  background: #B7E4C7;
+  color: #0a5a3f;
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(255, 125, 145, .4);
+  box-shadow: 0 8px 16px rgba(10, 90, 63, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -98,9 +135,5 @@
 @media (max-width: 500px) {
   .projects-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .projects-section {
-    padding: 90px 1rem 50px;
   }
 }

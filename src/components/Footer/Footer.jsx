@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="footer-branding">
           <h2 className="footer-name">Kate Carmel Prudon</h2>
           <p className="footer-role">
-           Frontend Developer and Design & Video Enthusiast, passionate about crafting clean, responsive, and modern experiences with creativity at the core.
-          </p>
+           A frontend developer and design and video enthusiast known for creating clean, modern, and responsive digital experiences.</p>
+
         </div>
 
         {/* Center - Quick Links */}
@@ -19,6 +19,7 @@ const Footer = () => {
           <ul>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/skills">Skills</Link></li>
+            <li><Link to="/experience">Experience</Link></li>
             <li><Link to="/projects">Projects</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>

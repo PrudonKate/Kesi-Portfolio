@@ -1,5 +1,5 @@
 .contact-section {
-  padding: clamp(100px, 15vh, 120px) clamp(1rem, 5vw, 40px) clamp(60px, 10vh, 80px);
+  padding: calc(var(--nav-height) - 0.5rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 8vh, 5rem);
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -11,13 +11,14 @@
 }
 
 .contact-title {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 800;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #1a3b2c;
   margin-bottom: 10px;
 }
 
 .contact-subtitle {
-  color: #4b5563;
+  color: #2D6A4F;
   font-size: clamp(0.9rem, 2vw, 1rem);
   max-width: 800px;
   margin: 0 auto;
@@ -94,7 +95,7 @@
 
 .form-field label { 
   font-size: clamp(0.8rem, 1.5vw, 0.85rem); 
-  color: #374151; 
+  color: #1a3b2c; 
   margin-bottom: 6px; 
 }
 
@@ -110,7 +111,7 @@
 
 .form-field input:focus,
 .form-field textarea:focus { 
-  border-bottom-color: #14b8a6; 
+  border-bottom-color: #0a5a3f; 
 }
 
 .form-actions { 
@@ -125,14 +126,16 @@
   padding: clamp(8px, 2vw, 10px) clamp(14px, 3vw, 16px); 
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   border-radius: 8px; 
-  box-shadow: 0 6px 16px rgba(20,184,166,.35); 
+  box-shadow: 0 6px 16px rgba(10, 90, 63, 0.35); 
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .send-btn:hover { 
-  filter: brightness(1.06); 
-  transform: translateY(-1px); 
+  background: #137b58;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 90, 63, 0.4);
 }
 
 @media (max-width: 900px) {
@@ -144,9 +147,5 @@
 @media (max-width: 600px) {
   .form-row { 
     grid-template-columns: 1fr; 
-  }
-  
-  .contact-section {
-    padding: 90px 1rem 50px;
   }
 }
