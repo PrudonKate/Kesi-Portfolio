@@ -15,9 +15,13 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -99,4 +103,31 @@ img {
   display: block;
   height: auto;
   max-width: 100%;
+}
+
+/* Responsive utilities */
+.app-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+  padding-top: calc(var(--nav-height) + 1rem);
+}
+
+/* Prevent horizontal scroll on mobile */
+* {
+  max-width: 100%;
+}
+
+/* Better touch targets on mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
